@@ -1,0 +1,23 @@
+#!/bin/sh
+
+mkdir $1 && cd $1
+
+echo "Creating app directory..."
+mkdir app
+echo "Creating tsconfig..."
+cp ~/Documents/code/templates/angular/tsconfig.json ./tsconfig.json
+echo "Creating typings..."
+cp ~/Documents/code/templates/angular/typings.json ./typings.json
+echo "Creating package..."
+cp ~/Documents/code/templates/angular/package.json ./package.json
+
+npm install
+
+echo "Copying app.component.ts..."
+cp ~/Documents/code/templates/angular/app.component.ts ./app/app.component.ts
+echo "Copying main.ts..."
+cp ~/Documents/code/templates/angular/main.ts ./app/main.ts
+echo "Copying index.html..."
+cp ~/Documents/code/templates/angular/index.html ./index.html
+
+npm start
